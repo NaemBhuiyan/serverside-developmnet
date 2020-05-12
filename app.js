@@ -14,6 +14,8 @@ const usersRouter = require("./routes/users");
 const promoRouter = require("./routes/promoRouter");
 const dishRouter = require("./routes/dishRouter");
 const leaderRouter = require("./routes/leaderRouter");
+const uploadRouter = require("./routes/uploadRouter");
+
 var config = require("./config");
 
 const url = config.mongoUrl;
@@ -59,6 +61,7 @@ app.use(express.static(path.join(__dirname, "views")));
 app.use("/promotions", promoRouter);
 app.use("/dishes", dishRouter);
 app.use("/leaders", leaderRouter);
+app.use("/imageUpload", uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
